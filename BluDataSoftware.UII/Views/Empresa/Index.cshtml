@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BluDataSoftware.UII.Models.Empresa.EmpresaIndexViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+@Html.ValidationSummary()
+<div class="panel panel-primary" style="margin-top:25px;">
+    <div class="panel-heading" style="text-align:center; font-size:34pt">
+        Lista de empresas
+    </div>
+    <div class="panel-body">
+<table class="table table-striped">
+    <thead class="bg-danger">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeFantasia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cnpj)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeFantasia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cnpj)
+                </td>
+                <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.EmpresaId }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.EmpresaId }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Deletar", "Delete", new { id = item.EmpresaId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+        <div class="panel-footer panel-collapse">
+        @Html.ActionLink("Nova empresa", "Create", new { }, new { @class = "btn btn-success" })
+
+        </div>
+        </div>
+    </div>

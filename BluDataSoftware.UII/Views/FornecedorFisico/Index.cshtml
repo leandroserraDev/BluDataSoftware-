@@ -1,0 +1,78 @@
+﻿@model IEnumerable<BluDataSoftware.UII.Models.FornecedorFisico.FornecedorFisicoViewModel>
+
+@{
+    ViewBag.Title = "Lista de Fornecedores";
+}
+
+
+
+<div class="panel panel-primary" style="margin-top:25px">
+    <div class="panel-heading " style="font-size:34pt; text-align:center" >
+        Lista de fornecedores
+    </div>
+    <div class="panel-body">
+<table class="table table-striped">
+    <thead class="bg-danger">
+        <tr>
+            <th>
+                @Html.ActionLink("Nome ↑↓", "Index", new { sortOrder = ViewBag.NameSortParm}, new { @class = "nome" })
+            </th>
+            <th>
+                @Html.ActionLink("Cpf ↑↓", "Index", new { sortOrder = ViewBag.CpfSortParm })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Empresa.NomeFantasia)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empresa.NomeFantasia)
+                </td>
+                <td>
+                    @Html.ActionLink("Adicionar empresa", "AddEmpresa", new { id = item.FornecedorId }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.FornecedorId }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.FornecedorId }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Deletar", "Delete", new { id = item.FornecedorId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+
+</table>
+</div>
+    <div class="panel-footer panel-info">
+        <p>
+            @Html.ActionLink("Novo Fornecedor", "Create", new { }, new { @class = "btn btn-success" })
+        </p>
+    </div>
+    </div>
+

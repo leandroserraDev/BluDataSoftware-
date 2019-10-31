@@ -1,0 +1,41 @@
+﻿@model BluDataSoftware.UII.Models.Empresa.EmpresaIndexViewModel
+
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger, bg-info" })
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <p style="font-size:34pt">Deletar</p>
+        <p style="font-size:20pt">Tem certeza que deseja deletar ?</p>
+    </div>
+   <div class="panel-body">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFantasia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uf)
+        </dd>
+
+    </dl>
+       </div>
+   
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+       
+</div>

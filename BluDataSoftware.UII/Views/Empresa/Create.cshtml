@@ -1,0 +1,65 @@
+﻿@model BluDataSoftware.UII.Models.Empresa.EmpresaIndexViewModel
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="panel panel-primary" style="margin-top:25px">
+            <div class="panel-heading" style="text-align:center; font-size:34pt;">
+                Novo Fornecedor
+            </div>
+            <div class="panel panel-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NomeFantasia, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NomeFantasia, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NomeFantasia, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cnpj, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Cnpj, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cnpj, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Uf, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                         @Html.DropDownList("Uf", new List<SelectListItem>{
+
+                             new SelectListItem { Text = "Rio de Janeiro (RJ)", Value ="Rio de Janeiro (RJ)"},
+                             new SelectListItem { Text = "São Paulo (SP)", Value ="São Paulo (SP)"},
+                             new SelectListItem { Text = "Paraná (PR)", Value ="Paraná (PR)"},
+
+
+                         }, "Selecione o estado", new { @class = "form-control" })
+                            
+                            @Html.ValidationMessageFor(model => model.Uf, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="panel-footer panel-info">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                                @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-warning" })
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+}
+
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

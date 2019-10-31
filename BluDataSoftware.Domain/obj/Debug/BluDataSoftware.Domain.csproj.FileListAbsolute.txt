@@ -1,0 +1,11 @@
+C:\Users\leand\Desktop\SubirParaOGitHub\ControleDeProdutos\BluDataContext\BluDataSoftware.Domain\bin\Debug\BluDataSoftware.Domain.dll
+C:\Users\leand\Desktop\SubirParaOGitHub\ControleDeProdutos\BluDataContext\BluDataSoftware.Domain\bin\Debug\BluDataSoftware.Domain.pdb
+C:\Users\leand\Desktop\SubirParaOGitHub\ControleDeProdutos\BluDataContext\BluDataSoftware.Domain\obj\Debug\BluDataSoftware.Domain.csproj.CoreCompileInputs.cache
+C:\Users\leand\Desktop\SubirParaOGitHub\ControleDeProdutos\BluDataContext\BluDataSoftware.Domain\obj\Debug\BluDataSoftware.Domain.dll
+C:\Users\leand\Desktop\SubirParaOGitHub\ControleDeProdutos\BluDataContext\BluDataSoftware.Domain\obj\Debug\BluDataSoftware.Domain.pdb
+C:\Users\leand\Desktop\SubirParaOGitHub\ControleDeProdutos\BluDataContext\BluDataSoftware.Domain\obj\Debug\BluDataSoftware.Domain.csprojAssemblyReference.cache
+C:\bludatasoftware\BluDataSoftware.Domain\bin\Debug\BluDataSoftware.Domain.dll
+C:\bludatasoftware\BluDataSoftware.Domain\bin\Debug\BluDataSoftware.Domain.pdb
+C:\bludatasoftware\BluDataSoftware.Domain\obj\Debug\BluDataSoftware.Domain.csproj.CoreCompileInputs.cache
+C:\bludatasoftware\BluDataSoftware.Domain\obj\Debug\BluDataSoftware.Domain.dll
+C:\bludatasoftware\BluDataSoftware.Domain\obj\Debug\BluDataSoftware.Domain.pdb

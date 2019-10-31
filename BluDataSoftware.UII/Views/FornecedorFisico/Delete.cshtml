@@ -1,0 +1,71 @@
+﻿@model BluDataSoftware.UII.Models.FornecedorFisico.FornecedorFisicoViewModel
+
+@{
+    ViewBag.Title = "Deletar Fornecedor";
+}
+
+
+
+
+    <div class="panel panel-primary" style="margin-top:25px">
+        <div class="panel-heading">
+            <b style="text-align:center; font-size:34pt">Deletar</b><br />
+            <p>Tem certeza que deseja deletar esse fornecedor ?</p>
+        </div>
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cpf)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Cpf)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Rg)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Rg)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DataNascimento)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DataNascimento)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telefone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Telefone)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    @Html.ActionLink("Voltar para a lista", "Index", new { }, new { @class = "btn btn-warning" })
+                    <input type="submit" value="Deletar" class="btn btn-danger" />
+
+                </div>
+            }
+        </div>
+    </div>
+

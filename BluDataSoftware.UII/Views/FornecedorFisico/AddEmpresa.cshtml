@@ -1,0 +1,65 @@
+﻿@model BluDataSoftware.UII.Models.FornecedorFisico.FornecedorFisicoViewModel
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="panel panel-primary" style="margin-top:25px">
+        <div class="panel-heading" style="font-size:34pt">
+            Fornecedor
+        </div>
+         <div class="form-horizontal">
+            <dl style="margin-left:25px">
+                <dt style="font-size:14pt">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+
+                <dt style="font-size:14pt">
+                    @Html.DisplayNameFor(model => model.Cpf)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Cpf)
+                </dd>
+                </dl>
+        </div>
+
+                <div class="panel-heading" style="font-size:34pt">
+                    Adicionar uma empresa
+                </div>
+                @Html.HiddenFor(model => model.FornecedorId)
+                <div class="panel-body">
+                    <div class="form-group">
+                        <p style="font-size:12pt">@Html.LabelFor(model => model.EmpresaId,"Nome da empresa", htmlAttributes: new { @class = "control-label col-md-2" })</p>
+                        <div class="col-md-10">
+                            @Html.DropDownList("EmpresaId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.EmpresaId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-offset-2 col-md-10" style="margin-top:10px">
+                            <input type="submit" value="Adicionar" class="btn btn-success" />
+                            @Html.ActionLink("Voltar para a lista", "Index", new { }, new { @class = "btn btn-warning" })
+                        </div>
+
+                    </div>
+
+
+                </div>
+        </div>
+
+        }
+
+        <div>
+
+        </div>
+
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
